@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 7</title>
+</head>
+<body>
+  <input type="text" id="filmeTitulo" placeholder="Título">
+  <input type="text" id="filmeGenero" placeholder="Gênero">
+  <input type="number" id="filmeAno" placeholder="Ano">
+  <button id="btnFilme">Criar Card</button>
+  <div id="containerFilmes"></div>
+
+  <script>
+    document.getElementById('btnFilme').addEventListener('click', () => {
+      const t = document.getElementById('filmeTitulo').value;
+      const g = document.getElementById('filmeGenero').value;
+      const a = document.getElementById('filmeAno').value;
+
+      if (!t || !g || !a) return;
+
+      const card = document.createElement('div');
+      const h3 = document.createElement('h3');
+      h3.textContent = t;
+
+      const pGenero = document.createElement('p');
+      pGenero.textContent = `Gênero: ${g}`;
+
+      const pAno = document.createElement('p');
+      pAno.textContent = `Ano: ${a}`;
+
+      card.appendChild(h3);
+      card.appendChild(pGenero);
+      card.appendChild(pAno);
+
+      document.getElementById('containerFilmes').appendChild(card);
+
+      document.getElementById('filmeTitulo').value = '';
+      document.getElementById('filmeGenero').value = '';
+      document.getElementById('filmeAno').value = '';
+    });
+  </script>
+</body>
+</html>

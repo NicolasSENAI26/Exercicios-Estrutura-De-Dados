@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 8</title>
+</head>
+<body>
+  <input type="text" id="muralTitulo" placeholder="Título do recado"><br><br>
+  <textarea id="muralTexto" placeholder="Mensagem"></textarea><br><br>
+  <button id="btnMural">Postar Recado</button>
+  <div id="muralRecados"></div>
+
+  <script>
+    document.getElementById('btnMural').addEventListener('click', () => {
+      const titulo = document.getElementById('muralTitulo').value;
+      const texto = document.getElementById('muralTexto').value;
+
+      if (!titulo || !texto) return;
+
+      const card = document.createElement('div');
+      const h4 = document.createElement('h4');
+      h4.textContent = titulo;
+
+      const p = document.createElement('p');
+      p.textContent = texto;
+
+      card.appendChild(h4);
+      card.appendChild(p);
+
+      document.getElementById('muralRecados').appendChild(card);
+
+      document.getElementById('muralTitulo').value = '';
+      document.getElementById('muralTexto').value = '';
+    });
+  </script>
+</body>
+</html>

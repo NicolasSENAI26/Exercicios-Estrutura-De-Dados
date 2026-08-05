@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 5</title>
+</head>
+<body>
+  <input type="text" id="inputTarefa" placeholder="Ex: Estudar JS">
+  <button id="btnTarefa">Adicionar Tarefa</button>
+  <ul id="listaTarefas"></ul>
+
+  <script>
+    const inputTarefa = document.getElementById('inputTarefa');
+    const btnTarefa = document.getElementById('btnTarefa');
+    const listaTarefas = document.getElementById('listaTarefas');
+
+    btnTarefa.addEventListener('click', () => {
+      if (!inputTarefa.value.trim()) return;
+      const li = document.createElement('li');
+      li.textContent = inputTarefa.value;
+      listaTarefas.appendChild(li);
+      inputTarefa.value = '';
+    });
+  </script>
+</body>
+</html>

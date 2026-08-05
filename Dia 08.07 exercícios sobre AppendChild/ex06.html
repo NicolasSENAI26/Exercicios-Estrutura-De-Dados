@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 6</title>
+</head>
+<body>
+  <div id="containerEx6"></div>
+
+  <script>
+    const container6 = document.getElementById('containerEx6');
+
+    const titulo = document.createElement('h1');
+    titulo.textContent = 'Título Gerado via JS';
+
+    const descricao = document.createElement('p');
+    descricao.textContent = 'Descrição detalhada anexada usando apenas o método appendChild().';
+
+    container6.appendChild(titulo);
+    container6.appendChild(descricao);
+  </script>
+</body>
+</html>

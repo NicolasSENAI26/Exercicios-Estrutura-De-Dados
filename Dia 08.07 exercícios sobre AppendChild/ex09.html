@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 9</title>
+</head>
+<body>
+  <input type="text" id="comentarioNome" placeholder="Seu nome"><br><br>
+  <textarea id="comentarioTexto" placeholder="Seu comentário"></textarea><br><br>
+  <button id="btnComentar">Publicar</button>
+  <div id="secaoComentarios"></div>
+
+  <script>
+    document.getElementById('btnComentar').addEventListener('click', () => {
+      const nome = document.getElementById('comentarioNome').value;
+      const texto = document.getElementById('comentarioTexto').value;
+
+      if (!nome || !texto) return;
+
+      const box = document.createElement('div');
+      const strong = document.createElement('strong');
+      strong.textContent = nome;
+
+      const p = document.createElement('p');
+      p.textContent = texto;
+
+      box.appendChild(strong);
+      box.appendChild(p);
+
+      document.getElementById('secaoComentarios').appendChild(box);
+
+      document.getElementById('comentarioNome').value = '';
+      document.getElementById('comentarioTexto').value = '';
+    });
+  </script>
+</body>
+</html>

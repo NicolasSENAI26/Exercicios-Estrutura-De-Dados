@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 3</title>
+</head>
+<body>
+  <button id="btnEx3">Adicionar item</button>
+  <ul id="listaEx3"></ul>
+
+  <script>
+    let contador = 1;
+    const btn3 = document.getElementById('btnEx3');
+    const lista3 = document.getElementById('listaEx3');
+
+    btn3.addEventListener('click', () => {
+      const li = document.createElement('li');
+      li.textContent = `Item ${contador}`;
+      contador++;
+      lista3.appendChild(li);
+    });
+  </script>
+</body>
+</html>

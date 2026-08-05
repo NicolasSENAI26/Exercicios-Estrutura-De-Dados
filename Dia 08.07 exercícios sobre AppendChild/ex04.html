@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 4</title>
+</head>
+<body>
+  <input type="text" id="inputEx4" placeholder="Digite um texto">
+  <button id="btnEx4">Adicionar</button>
+  <ul id="listaEx4"></ul>
+
+  <script>
+    const input4 = document.getElementById('inputEx4');
+    const btn4 = document.getElementById('btnEx4');
+    const lista4 = document.getElementById('listaEx4');
+
+    btn4.addEventListener('click', () => {
+      if (!input4.value.trim()) return;
+      const li = document.createElement('li');
+      li.textContent = input4.value;
+      lista4.appendChild(li);
+      input4.value = '';
+    });
+  </script>
+</body>
+</html>

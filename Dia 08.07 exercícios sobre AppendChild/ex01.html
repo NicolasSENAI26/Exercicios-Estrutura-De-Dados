@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 1</title>
+</head>
+<body>
+  <button id="btnEx1">Adicionar texto</button>
+  <div id="containerEx1"></div>
+
+  <script>
+    const btn1 = document.getElementById('btnEx1');
+    const container1 = document.getElementById('containerEx1');
+
+    btn1.addEventListener('click', () => {
+      const p = document.createElement('p');
+      p.textContent = 'Olá mundo!';
+      container1.appendChild(p);
+    });
+  </script>
+</body>
+</html>

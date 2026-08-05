@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 10</title>
+</head>
+<body>
+  <input type="text" id="postNome" placeholder="Seu nome"><br><br>
+  <textarea id="postTexto" placeholder="O que você está pensando?"></textarea><br><br>
+  <button id="btnPostar">Publicar</button>
+  <div id="feed"></div>
+
+  <script>
+    document.getElementById('btnPostar').addEventListener('click', () => {
+      const nome = document.getElementById('postNome').value;
+      const texto = document.getElementById('postTexto').value;
+
+      if (!nome || !texto) return;
+
+      let curtidas = 0;
+
+      const post = document.createElement('div');
+      
+      const h4 = document.createElement('h4');
+      h4.textContent = nome;
+
+      const p = document.createElement('p');
+      p.textContent = texto;
+
+      const btnCurtir = document.createElement('button');
+      btnCurtir.textContent = `Curtir (${curtidas})`;
+
+      btnCurtir.addEventListener('click', () => {
+        curtidas++;
+        btnCurtir.textContent = `Curtir (${curtidas})`;
+      });
+
+      post.appendChild(h4);
+      post.appendChild(p);
+      post.appendChild(btnCurtir);
+
+      document.getElementById('feed').appendChild(post);
+
+      document.getElementById('postNome').value = '';
+      document.getElementById('postTexto').value = '';
+    });
+  </script>
+</body>
+</html>
