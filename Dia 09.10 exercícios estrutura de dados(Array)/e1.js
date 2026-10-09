@@ -1,0 +1,1 @@
+let frutas = [banana, maça, uva]
